@@ -11,6 +11,5 @@
     },
     "rewrites": [
         { "source": "/(.*)", "destination": "/api/lambda.php" }
-    ],
-    "ignoreCommand": "git diff --quiet HEAD^ HEAD ."
+    ]
 }
