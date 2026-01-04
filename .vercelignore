@@ -1,1 +1,73 @@
-public/index.php
+# Dependencies - Akan diinstall di Vercel dengan --no-dev
+# EXCLUDE vendor/ agar Vercel install ulang dengan --no-dev (lebih kecil)
+vendor/
+node_modules/
+
+# Development files
+.env
+.env.*
+!.env.example
+.phpactor.json
+.phpunit.result.cache
+composer.phar
+
+# IDE files
+.idea/
+.vscode/
+.fleet/
+.nova/
+.zed/
+
+# Build artifacts (akan di-build ulang di Vercel)
+public/build/
+public/hot/
+dist/
+
+# Storage & Logs
+storage/logs/
+storage/framework/cache/
+storage/framework/sessions/
+storage/framework/views/
+storage/framework/testing/
+*.log
+
+# Testing
+tests/
+phpunit.xml
+.phpunit.cache/
+
+# Documentation (optional - bisa di-exclude untuk mengurangi ukuran)
+# README.md
+# *.md
+# !README.md
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+
+# Large files
+*.zip
+*.tar.gz
+*.rar
+
+# Vercel
+.vercel/
+
+# Node modules - akan diinstall di Vercel
+node_modules/
+
+# Catatan: vendor/ TIDAK di-exclude karena diperlukan
+# Vercel akan install ulang dengan: composer install --no-dev --optimize-autoloader

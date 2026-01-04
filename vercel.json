@@ -1,12 +1,16 @@
 {
     "$schema": "https://openapi.vercel.sh/vercel.json",
     "outputDirectory": "public",
+    "buildCommand": "composer install --no-dev --optimize-autoloader --no-interaction && npm install && npm run build",
+    "installCommand": "composer install --no-dev --optimize-autoloader --no-interaction",
     "functions": {
         "api/lambda.php": {
-            "runtime": "vercel-php@0.7.4"
+            "runtime": "vercel-php@0.7.4",
+            "maxDuration": 30
         }
     },
     "rewrites": [
         { "source": "/(.*)", "destination": "/api/lambda.php" }
-    ]
+    ],
+    "ignoreCommand": "git diff --quiet HEAD^ HEAD ."
 }
