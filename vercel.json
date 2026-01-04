@@ -2,7 +2,6 @@
     "version": 2,
     "$schema": "https://openapi.vercel.sh/vercel.json",
     "framework": null,
-    "outputDirectory": "public",
     "buildCommand": "npm install && npm run build",
     "functions": {
         "api/lambda.php": {
@@ -10,7 +9,30 @@
             "maxDuration": 30
         }
     },
-    "rewrites": [
-        { "source": "/(.*)", "destination": "/api/lambda.php" }
+    "routes": [
+        {
+            "src": "/build/(.*)",
+            "dest": "/public/build/$1"
+        },
+        {
+            "src": "/images/(.*)",
+            "dest": "/public/images/$1"
+        },
+        {
+            "src": "/favicon.ico",
+            "dest": "/public/favicon.ico"
+        },
+        {
+            "src": "/robots.txt",
+            "dest": "/public/robots.txt"
+        },
+        {
+            "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot))",
+            "dest": "/public/$1"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/api/lambda.php"
+        }
     ]
 }
