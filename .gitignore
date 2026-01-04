@@ -28,7 +28,9 @@
 !/storage/framework/testing/.gitkeep
 /storage/framework/views/*
 !/storage/framework/views/.gitkeep
-/vendor
+# /vendor - Uncomment untuk exclude vendor dari Git
+# Untuk Vercel deployment, vendor/ perlu di-commit (sudah di-build dengan --no-dev)
+# /vendor
 Homestead.json
 Homestead.yaml
 Thumbs.db

@@ -1,6 +1,7 @@
-# Dependencies - Akan diinstall di Vercel dengan --no-dev
-# EXCLUDE vendor/ agar Vercel install ulang dengan --no-dev (lebih kecil)
-vendor/
+# Dependencies - Include vendor/ yang sudah di-build dengan --no-dev
+# JANGAN exclude vendor/ karena Vercel tidak bisa install dependencies
+# Build vendor/ lokal dengan: composer install --no-dev --optimize-autoloader
+# vendor/ - JANGAN exclude, harus di-include
 node_modules/
 
 # Development files
