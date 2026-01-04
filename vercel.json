@@ -1,8 +1,8 @@
 {
     "$schema": "https://openapi.vercel.sh/vercel.json",
     "outputDirectory": "public",
-    "buildCommand": "composer install --no-dev --optimize-autoloader --no-interaction && npm install && npm run build",
-    "installCommand": "composer install --no-dev --optimize-autoloader --no-interaction",
+    "buildCommand": "curl -sS https://getcomposer.org/installer | php && php composer.phar install --no-dev --optimize-autoloader --no-interaction && rm -f composer.phar && npm install && npm run build",
+    "installCommand": "curl -sS https://getcomposer.org/installer | php && php composer.phar install --no-dev --optimize-autoloader --no-interaction && rm -f composer.phar",
     "functions": {
         "api/lambda.php": {
             "runtime": "vercel-php@0.7.4",
